@@ -537,7 +537,10 @@ void AIChatService::OnOsCryptAsyncReady(
               backend->SetBridge(std::make_unique<AIChatSyncBridge>(
                   std::make_unique<syncer::ClientTagBasedDataTypeProcessor>(
                       syncer::AI_CHAT_CONVERSATION, base::DoNothing()),
-                  db));
+                  db,
+                  // No remote-change listener yet; service integration wires
+                  // one in a later change.
+                  base::DoNothing()));
             },
             sync_backend_, database_ptr));
   }
