@@ -26,6 +26,7 @@
 #include "base/logging.h"
 #include "base/numerics/clamped_math.h"
 #include "base/strings/string_util.h"
+#include "base/task/bind_post_task.h"
 #include "base/task/task_traits.h"
 #include "base/task/thread_pool.h"
 #include "base/time/time.h"
@@ -530,19 +531,24 @@ void AIChatService::OnOsCryptAsyncReady(
   // proxy delegates already handed out to the sync engine resolve to this
   // bridge as soon as this task runs.
   if (sync_backend_) {
+    // Hop from the bridge sequence back to this service's sequence (UI)
+    // when remote changes are applied, so we can refresh the in-memory
+    // conversation list and any active ConversationHandlers.
+    auto on_remote_changes_applied = base::BindPostTask(
+        base::SequencedTaskRunner::GetCurrentDefault(),
+        base::BindRepeating(&AIChatService::OnRemoteSyncDataApplied,
+                            weak_ptr_factory_.GetWeakPtr()));
     db_task_runner_->PostTask(
         FROM_HERE,
         base::BindOnce(
-            [](scoped_refptr<AIChatSyncBackend> backend, AIChatDatabase* db) {
+            [](scoped_refptr<AIChatSyncBackend> backend, AIChatDatabase* db,
+               base::RepeatingClosure on_remote_changes_applied) {
               backend->SetBridge(std::make_unique<AIChatSyncBridge>(
                   std::make_unique<syncer::ClientTagBasedDataTypeProcessor>(
                       syncer::AI_CHAT_CONVERSATION, base::DoNothing()),
-                  db,
-                  // No remote-change listener yet; service integration wires
-                  // one in a later change.
-                  base::DoNothing()));
+                  db, std::move(on_remote_changes_applied)));
             },
-            sync_backend_, database_ptr));
+            sync_backend_, database_ptr, std::move(on_remote_changes_applied)));
   }
 }
 
@@ -1338,6 +1344,37 @@ void AIChatService::OnConversationListChanged() {
     }
     remote->OnConversationListChanged(std::move(client_conversations));
   }
+}
+
+void AIChatService::OnRemoteSyncDataApplied() {
+  // For each currently-active ConversationHandler, re-fetch its archive
+  // and push it down so the visible chat history matches the DB. We do
+  // this BEFORE reloading the list so that a handler still pointing at a
+  // conversation whose metadata was just touched gets fresh data; the
+  // list refresh that follows handles any new conversations the user
+  // doesn't currently have open.
+  for (const auto& kv : conversation_handlers_) {
+    const std::string& uuid = kv.first;
+    ai_chat_db_.AsyncCall(&AIChatDatabase::GetConversationData)
+        .WithArgs(uuid)
+        .Then(base::BindOnce(
+            &AIChatService::OnConversationDataForRemoteSyncReload,
+            weak_ptr_factory_.GetWeakPtr(), uuid));
+  }
+  // Refresh the in-memory list from the DB so the UI reflects any new or
+  // deleted conversations.
+  ReloadConversations();
+  OnConversationListChanged();
+}
+
+void AIChatService::OnConversationDataForRemoteSyncReload(
+    const std::string& uuid,
+    mojom::ConversationArchivePtr archive) {
+  auto it = conversation_handlers_.find(uuid);
+  if (it == conversation_handlers_.end() || !it->second) {
+    return;
+  }
+  it->second->OnRemoteSyncDataApplied(std::move(archive));
 }
 
 void AIChatService::OpenConversationWithStagedEntries(

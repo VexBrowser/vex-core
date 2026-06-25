@@ -339,6 +339,16 @@ class AIChatService : public KeyedService,
       SkusServiceGetter getter,
       mojo::PendingRemote<skus::mojom::SkusService> service);
   void OnConversationListChanged();
+  // Called on this sequence (UI thread) by AIChatSyncBridge after it
+  // applies a batch of remote ADDs/UPDATEs/DELETEs. Refreshes the
+  // in-memory conversation list and pushes new data into any active
+  // ConversationHandler — stopping any in-flight LLM request or tool-use
+  // loop on those handlers first, since their local state has been
+  // superseded by the remote write.
+  void OnRemoteSyncDataApplied();
+  void OnConversationDataForRemoteSyncReload(
+      const std::string& uuid,
+      mojom::ConversationArchivePtr archive);
   void OnPremiumStatusReceived(GetPremiumStatusCallback callback,
                                mojom::PremiumStatus status,
                                mojom::PremiumInfoPtr info);
