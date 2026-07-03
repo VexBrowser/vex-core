@@ -11,8 +11,8 @@ substitutions:
       chip. Brave has page actions whose label must remain visible regardless,
       so we widen the condition to also cover `model.GetAlwaysShowLabel()`.
     regex:
-      re_pattern: 'else if \((model.ShouldShowSuggestionChip\(\))\)'
-      replace: 'else if (\1 || model.GetAlwaysShowLabel())'
+      re_pattern: 'if \((model.ShouldShowSuggestionChip\(\))\)'
+      replace: 'if (\1 || model.GetAlwaysShowLabel())'
 
   - description: |
       Let Brave adjust the border insets before UpdateBorder() applies them.
