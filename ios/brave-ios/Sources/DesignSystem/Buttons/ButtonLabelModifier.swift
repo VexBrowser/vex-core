@@ -87,7 +87,7 @@ struct CircleButtonLabelModifier: ViewModifier {
 }
 
 /// Alternate button shapes supported by Brave button styles.
-/// Add button required button shapes here and implement them in the proceeding View extension.
+/// Add  supported button shapes here and implement them in the proceeding View extension.
 public enum BraveButtonShape {
   case capsule
   case circle
