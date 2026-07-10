@@ -526,7 +526,7 @@ IN_PROC_BROWSER_TEST_F(SidebarBrowserTest, IterateBuiltInWebTypeTest) {
 #if !BUILDFLAG(IS_MAC)
   auto* browser2 = CreateBrowser(browser()->profile());
   WaitUntil(base::BindLambdaForTesting(
-      [&]() { return browser2->window()->IsActive(); }));
+      [&]() { return BrowserWindow::FromBrowser(browser2)->IsActive(); }));
 
   // |browser2| doesn't have any wallet tab. So, clicking wallet sidebar item
   // activates other browser's first wallet tab.
@@ -535,7 +535,7 @@ IN_PROC_BROWSER_TEST_F(SidebarBrowserTest, IterateBuiltInWebTypeTest) {
 
   // Wait till browser() is activated.
   WaitUntil(base::BindLambdaForTesting(
-      [&]() { return browser()->window()->IsActive(); }));
+      [&]() { return BrowserWindow::FromBrowser(browser())->IsActive(); }));
 
   EXPECT_EQ(0, tab_model()->active_index());
 #endif
