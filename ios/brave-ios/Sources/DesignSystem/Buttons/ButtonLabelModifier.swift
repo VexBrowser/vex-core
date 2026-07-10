@@ -75,3 +75,53 @@ extension EdgeInsets {
     self.init(top: vertical, leading: horizontal, bottom: vertical, trailing: horizontal)
   }
 }
+
+struct CircleButtonLabelModifier: ViewModifier {
+  @ScaledMetric private var minSize = 44
+
+  func body(content: Content) -> some View {
+    content
+      .frame(minWidth: minSize, minHeight: minSize)
+      .contentShape(.circle)
+  }
+}
+
+/// Alternate button shapes supported by Brave button styles.
+/// Add button required button shapes here and implement them in the proceeding View extension.
+public enum BraveButtonShape {
+  case capsule
+  case circle
+}
+
+extension View {
+  @ViewBuilder
+  func braveButtonLabel(shape: BraveButtonShape) -> some View {
+    switch shape {
+    case .capsule:
+      modifier(ButtonLabelModifier())
+    case .circle:
+      modifier(CircleButtonLabelModifier())
+    }
+  }
+
+  @ViewBuilder
+  func braveButtonClipShape(_ shape: BraveButtonShape) -> some View {
+    switch shape {
+    case .capsule:
+      clipShape(.capsule).contentShape(.capsule)
+    case .circle:
+      clipShape(.circle).contentShape(.circle)
+    }
+  }
+
+  @available(iOS 26.0, *)
+  @ViewBuilder
+  func braveGlassEffect(_ effect: Glass, shape: BraveButtonShape) -> some View {
+    switch shape {
+    case .capsule:
+      glassEffect(effect, in: .capsule)
+    case .circle:
+      glassEffect(effect, in: .circle)
+    }
+  }
+}
