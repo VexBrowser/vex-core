@@ -155,8 +155,8 @@ class SidebarBrowserTest : public InProcessBrowserTest {
   }
 
   views::View* GetVerticalTabsContainer() const {
-    auto* view = BrowserView::GetBrowserViewForBrowser(browser());
-    return static_cast<BraveBrowserView*>(view)->vertical_tab_strip_host_view_;
+    auto* view = BraveBrowserView::GetBrowserViewForBrowser(browser());
+    return view->vertical_tab_strip_host_view_;
   }
 
   raw_ptr<SidebarItemsContentsView> GetSidebarItemsContentsView(
@@ -669,8 +669,7 @@ IN_PROC_BROWSER_TEST_P(SidebarBrowserWithSplitViewTest,
   // To put sidebar right position after changing show option.
   browser_view()->DeprecatedLayoutImmediately();
 
-  auto* browser_view = static_cast<BraveBrowserView*>(
-      BrowserView::GetBrowserViewForBrowser(browser()));
+  auto* browser_view = BraveBrowserView::GetBrowserViewForBrowser(browser());
 
   auto* prefs = browser()->profile()->GetPrefs();
   auto* sidebar_container = GetSidebarContainerView();
