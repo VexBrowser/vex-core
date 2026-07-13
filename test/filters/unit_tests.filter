@@ -33,7 +33,7 @@
 -GlicMetricsTrustFirstOnboardingTest.*
 -GlicEnablingProfileReadyStateTestBase.*
 -MultistepFilterServiceFactoryTest.*
--SkillsUiTabControllerTest.InvokeSkill_*
+-SkillsUiTabController*Test.InvokeSkill_*
 -TabStripActionContainerTest.Glic*
 
 # These tests fail because we don't use kChromeUINewTabPageThirdPartyURL
@@ -697,6 +697,7 @@
 -ContextualSearchboxHandlerTest.QueryAutocomplete_SetsLensInputs_InToolModes
 -OmniboxEditModelPopupTest.AiModeButtonClick*
 -OmniboxEditModelPopupTest.AimPopup*
+-OmniboxPopupHandlerTest.*
 -WebuiOmniboxHandlerTest.OnActiveTabChanged_SavesAndRestoresState
 
 # These tests crash because the tests initialize profile first and then reset
@@ -746,6 +747,8 @@
 -AccessCodeCastSinkServiceFactoryTest.PrefEnabledReturnsValidService
 -ActivityLogTest.LogPrerender
 -All/ChromeLabs*Test.*
+-All/ProfileResetterTestForSnapshots.CheckSnapshots*/*
+-All/ProfileResetterTestWithIgnoreSearchProviderOverrides.ResetDefaultSearchEngineNonOrganic/1
 -All/TabStripTest.TabCloseButtonVisibility/*
 -All/WebstorePrivateBeginInstallWithManifest3FrictionDialogTest.*
 -BookmarkBarViewTest.ManagedShowAppsShortcutInBookmarksBar
@@ -807,7 +810,6 @@
 -ProfileAttributesStorageTest.*
 -ProfileCustomizationBubbleSyncControllerTest.ShouldAbortIfCalledAgain
 -ProfileCustomizationBubbleSyncControllerTest.ShouldShowWhenSyncGetsDefaultTheme
--ProfileResetterTest.CheckSnapshots
 -ProfileResetterTest.ResetContentSettings
 -ProfileResetterTest.ResetStartPagePartially
 -RealThemeSyncableServiceTest.*
