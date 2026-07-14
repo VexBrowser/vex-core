@@ -278,7 +278,7 @@ const std::vector<mojom::ModelPtr>& GetLeoModels() {
       model->key = "chat-nemotron-nano-3-30b";
       model->display_name = "Nemotron Nano 3 30B";
       model->vision_support = false;
-      model->supports_tools = true;
+      model->supports_tools = false;
       model->supported_capabilities = {
           mojom::ConversationCapability::CHAT,
           mojom::ConversationCapability::DEEP_RESEARCH};
@@ -304,7 +304,7 @@ const std::vector<mojom::ModelPtr>& GetLeoModels() {
       model->key = "chat-grok-4-3-bedrock";
       model->display_name = "Grok 4.3";
       model->vision_support = true;
-      model->supports_tools = true;
+      model->supports_tools = false;
       model->supported_capabilities = {
           mojom::ConversationCapability::CHAT,
           mojom::ConversationCapability::DEEP_RESEARCH};
