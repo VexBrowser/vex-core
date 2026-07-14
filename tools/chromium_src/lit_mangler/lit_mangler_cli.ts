@@ -38,8 +38,11 @@ const getTsConfigForFiles = (genDir: string, files: string[]) => {
   ]
 
   // As the file is generated in the temp directory we need to set the baseUrl
-  // so everything resolvese correctly.
+  // and typeRoots so everything resolves correctly from the Brave package.
   tsConfig.compilerOptions.baseUrl = baseDir
+  tsConfig.compilerOptions.typeRoots = [
+    path.join(baseDir, 'node_modules/@types'),
+  ]
 
   // Write the tsconfig to the gen directory.
   const tsConfigName = `lit-mangler-check-tsconfig_${files.map((file) => path.basename(file)).join('_')}.json`
