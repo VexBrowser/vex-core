@@ -21,7 +21,6 @@
 #include "ui/views/controls/label.h"
 #include "ui/views/controls/textfield/textfield.h"
 #include "ui/views/layout/box_layout.h"
-#include "ui/views/widget/widget.h"
 
 namespace {
 constexpr int kDialogWidth = 360;
@@ -30,8 +29,6 @@ constexpr int kSpacing = 8;
 }  // namespace
 
 SaveWorkspaceDialog::SaveWorkspaceDialog(Profile* profile) : profile_(profile) {
-  // The caller (WorkspacesBubbleController) owns the resulting Widget.
-  SetOwnershipOfNewWidget(views::Widget::InitParams::CLIENT_OWNS_WIDGET);
   SetModalType(ui::mojom::ModalType::kWindow);
   SetTitle(l10n_util::GetStringUTF16(IDS_WORKSPACE_SAVE_DIALOG_TITLE));
   SetButtonLabel(

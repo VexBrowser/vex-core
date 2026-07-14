@@ -18,7 +18,6 @@ class Profile;
 
 namespace views {
 class Textfield;
-class Widget;
 }  // namespace views
 
 // A modal dialog that prompts the user to name a new workspace. On accept, the
@@ -28,13 +27,13 @@ class Widget;
 // delegate and View), this inherits from views::DialogDelegate and installs a
 // separate contents view via SetContentsView(). It also serves as the name
 // field's controller so the OK button is enabled only while a name has been
-// entered.
+// entered. WorkspacesBubbleController owns the delegate and defers its
+// deletion via DeleteSoon once the widget's own destruction is complete.
 class SaveWorkspaceDialog : public views::DialogDelegate,
                             public views::TextfieldController {
  public:
   // |profile| supplies the workspace service saved to and must outlive this
-  // dialog. The dialog configures its widget as CLIENT_OWNS_WIDGET; the caller
-  // owns the resulting Widget (see WorkspacesBubbleController).
+  // dialog.
   explicit SaveWorkspaceDialog(Profile* profile);
   ~SaveWorkspaceDialog() override;
 
