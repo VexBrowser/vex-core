@@ -15,17 +15,27 @@ Read the applicable documents in this order:
 1. [`../../AGENTS.md`](../../AGENTS.md) — entry point for automated agents.
 2. [Brave's inherited agent instructions](../../.claude/CLAUDE.md).
 3. [`AGENT_RULES.md`](AGENT_RULES.md) — mandatory Vex-specific rules.
-4. [`ARCHITECTURE.md`](ARCHITECTURE.md) — stable Vex architecture boundaries.
-5. [`UPSTREAM.md`](UPSTREAM.md) — upstream synchronization policy and workflow.
-6. [`PATCHSETS.md`](PATCHSETS.md) — registry of Vex divergence from upstream.
-7. [`VALIDATION.md`](VALIDATION.md) — evidence required before merge.
-8. [`adr/README.md`](adr/README.md) — architecture decision records and the
+4. [`CONTRIBUTING.md`](CONTRIBUTING.md) — Vex contribution and PR workflow.
+5. [`ARCHITECTURE.md`](ARCHITECTURE.md) — stable Vex architecture boundaries.
+6. [`UPSTREAM.md`](UPSTREAM.md) — upstream synchronization policy and workflow.
+7. [`PATCHSETS.md`](PATCHSETS.md) — registry of Vex divergence from upstream.
+8. [`VALIDATION.md`](VALIDATION.md) — evidence required before merge.
+9. [`adr/README.md`](adr/README.md) — architecture decision records and the
    exception process.
 
 The public product roadmap lives in
 [`VexBrowser/vex-browser`](https://github.com/VexBrowser/vex-browser/blob/main/ROADMAP.md).
 It describes *what* the project intends to deliver. The documents here describe
 *how* the browser must be engineered and maintained.
+
+Root-level policies also apply:
+
+- [`../../SECURITY.md`](../../SECURITY.md) — private vulnerability reporting and
+  current support status;
+- [`../../NOTICE`](../../NOTICE) — attribution and project independence;
+- [`../../TRADEMARKS.md`](../../TRADEMARKS.md) — proprietary Vex brand boundary;
+- [`../../.github/PULL_REQUEST_TEMPLATE.md`](../../.github/PULL_REQUEST_TEMPLATE.md)
+  — required upstream-impact and validation fields for pull requests.
 
 ## Non-negotiable principles
 
