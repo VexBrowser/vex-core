@@ -1,5 +1,5 @@
 diff --git a/chrome/browser/ui/views/page_action/page_action_view.cc b/chrome/browser/ui/views/page_action/page_action_view.cc
-index 415e8f510fc4051e18caa829942226670adc5e19..373a60344257237839f46d0383eef6786f3aca3a 100644
+index ea98b42ae72d802eeb5842d7231c2df24528c54e..ba31b88612e31bcd164042fd97123cbe3513cf16 100644
 --- a/chrome/browser/ui/views/page_action/page_action_view.cc
 +++ b/chrome/browser/ui/views/page_action/page_action_view.cc
 @@ -238,7 +238,7 @@ void PageActionView::HandleSlideAndCrossfadeTransition(

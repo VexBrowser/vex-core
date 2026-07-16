@@ -1,8 +1,8 @@
 diff --git a/chrome/android/BUILD.gn b/chrome/android/BUILD.gn
-index 0ff13dbee299fe8c0561d417caf18927da049ead..7aa39958140e00d928e72d73a0b04bb1f1f21e01 100644
+index 3f1b56a308592eea9e3efbc52441fd018d6c642d..d863b2cd6375af0840d82057ac3bfb5723594781 100644
 --- a/chrome/android/BUILD.gn
 +++ b/chrome/android/BUILD.gn
-@@ -163,6 +163,7 @@ if (_is_default_toolchain) {
+@@ -161,6 +161,7 @@ if (_is_default_toolchain) {
        "java/res_chromium_base/mipmap-xxxhdpi/layered_app_icon_background.png",
        "java/res_chromium_base/values/channel_constants.xml",
      ]
@@ -10,7 +10,7 @@ index 0ff13dbee299fe8c0561d417caf18927da049ead..7aa39958140e00d928e72d73a0b04bb1
    }
  
    android_resources("chrome_app_java_resources") {
-@@ -269,6 +270,7 @@ if (_is_default_toolchain) {
+@@ -267,6 +268,7 @@ if (_is_default_toolchain) {
      if (enable_extensions_core) {
        deps += [ "//chrome/browser/ui/android/extensions:java_resources" ]
      }
@@ -50,7 +50,7 @@ index 0ff13dbee299fe8c0561d417caf18927da049ead..7aa39958140e00d928e72d73a0b04bb1
  
      # Dep needed to ensure override works properly.
      deps = [ ":chrome_base_module_resources" ]
-@@ -1940,6 +1946,7 @@ if (_is_default_toolchain) {
+@@ -1938,6 +1944,7 @@ if (_is_default_toolchain) {
          ":${_variant}_locale_pak_assets",
          ":${_variant}_paks",
        ]
@@ -58,7 +58,7 @@ index 0ff13dbee299fe8c0561d417caf18927da049ead..7aa39958140e00d928e72d73a0b04bb1
      }
    }
  
-@@ -2204,6 +2211,7 @@ if (_is_default_toolchain) {
+@@ -2205,6 +2212,7 @@ if (_is_default_toolchain) {
        "//third_party/androidx:androidx_annotation_annotation_experimental_java",
        "//third_party/androidx:androidx_browser_browser_java",
      ]
@@ -66,7 +66,7 @@ index 0ff13dbee299fe8c0561d417caf18927da049ead..7aa39958140e00d928e72d73a0b04bb1
  
      # More deps for DFMs.
      if (enable_chrome_android_internal) {
-@@ -3147,6 +3155,7 @@ if (_is_default_toolchain) {
+@@ -3160,6 +3168,7 @@ if (_is_default_toolchain) {
        "java/src/org/chromium/chrome/browser/webapps/WebappRegistry.java",
        "java/src/org/chromium/chrome/browser/xr/scenecore/XrModuleBridge.java",
      ]

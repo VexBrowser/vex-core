@@ -1,5 +1,5 @@
 diff --git a/chrome/browser/global_features.cc b/chrome/browser/global_features.cc
-index 6a474328b9860a84e78b214a77133caf7fcca750..8d2af594ca4edfc92aa63244c491fb17fad740fd 100644
+index 9798d48e5da2fc717e2f417ce8200f6930c5ec5b..3b57a3e09263dac0eac22424dcc7a8a28e45695b 100644
 --- a/chrome/browser/global_features.cc
 +++ b/chrome/browser/global_features.cc
 @@ -84,6 +84,7 @@

@@ -1,8 +1,8 @@
 diff --git a/ios/chrome/browser/shared/model/prefs/browser_prefs.mm b/ios/chrome/browser/shared/model/prefs/browser_prefs.mm
-index 2ce4c06f0be5d8eee981524a108271e022c36a6d..b862d00e318d08c3194e8ecbed48452bb0f371cb 100644
+index 09794588c071efc269f5d1563f691d9eb2b12184..c3a516338924de9d4941cc76d3ff0fd6b6d122f3 100644
 --- a/ios/chrome/browser/shared/model/prefs/browser_prefs.mm
 +++ b/ios/chrome/browser/shared/model/prefs/browser_prefs.mm
-@@ -493,6 +493,7 @@ void RegisterLocalStatePrefs(PrefRegistrySimple* registry) {
+@@ -494,6 +494,7 @@ void RegisterLocalStatePrefs(PrefRegistrySimple* registry) {
  
    // Deprecated 07/2026.
    registry->RegisterIntegerPref(kObsoleteMetricsReportingLevel, 0);
@@ -10,7 +10,7 @@ index 2ce4c06f0be5d8eee981524a108271e022c36a6d..b862d00e318d08c3194e8ecbed48452b
  }
  
  void RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {
-@@ -967,6 +968,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {
+@@ -971,6 +972,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {
    registry->RegisterIntegerPref(kPreallocatedAddressesNext, 0);
    registry->RegisterTimePref(kFirstPlusAddressCreationTime, base::Time());
    registry->RegisterTimePref(kLastPlusAddressFillingTime, base::Time());

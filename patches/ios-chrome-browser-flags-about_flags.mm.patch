@@ -1,5 +1,5 @@
 diff --git a/ios/chrome/browser/flags/about_flags.mm b/ios/chrome/browser/flags/about_flags.mm
-index 67ddbb985653d262ba6b389cd3254d89e5a4703c..a1501fafce589dc2ad48b74de36a0959a1956c6a 100644
+index 3b3e80d2cfab65f66f19a4a737e87c95c6430ad4..d8a278167aa6341df4a87433ba874c869e95df0b 100644
 --- a/ios/chrome/browser/flags/about_flags.mm
 +++ b/ios/chrome/browser/flags/about_flags.mm
 @@ -1351,6 +1351,7 @@ const FeatureEntry::FeatureVariation kCrossDeviceSigninVariations[] = {

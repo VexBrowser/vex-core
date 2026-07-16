@@ -1,8 +1,8 @@
 diff --git a/chrome/browser/ui/views/location_bar/star_view.cc b/chrome/browser/ui/views/location_bar/star_view.cc
-index 0a473d8926b8ee3c69c68337b516cfe8b9beedb5..55a418f5324b3e9567e062ba19c7e91e520881cc 100644
+index 890511554c318a0cc8b6001b9b7e21d1d73a2d5f..e3f25549f0aead272ac0e498fd0bf87cb6cadc62 100644
 --- a/chrome/browser/ui/views/location_bar/star_view.cc
 +++ b/chrome/browser/ui/views/location_bar/star_view.cc
-@@ -97,6 +97,7 @@ void StarView::OnWidgetDestroyed(views::Widget* widget) {
+@@ -86,6 +86,7 @@ void StarView::OnWidgetDestroyed(views::Widget* widget) {
  }
  
  void StarView::OnBubbleWidgetChanged(views::Widget* widget) {
@@ -10,7 +10,7 @@ index 0a473d8926b8ee3c69c68337b516cfe8b9beedb5..55a418f5324b3e9567e062ba19c7e91e
    CHECK(GetBubble() && widget);
    UpdateTooltipText();
    if (scoped_observation_.IsObserving()) {
-@@ -107,7 +108,7 @@ void StarView::OnBubbleWidgetChanged(views::Widget* widget) {
+@@ -96,7 +97,7 @@ void StarView::OnBubbleWidgetChanged(views::Widget* widget) {
  }
  
  void StarView::UpdateImpl() {

@@ -1,5 +1,5 @@
 diff --git a/chrome/browser/resources/side_panel/bookmarks/power_bookmarks_list_header.ts b/chrome/browser/resources/side_panel/bookmarks/power_bookmarks_list_header.ts
-index c6bfbd94c7242659f34bc7d31ceddf8b0d619d0a..949a355ee184c5a4e2f91bb41e3f9770523206fb 100644
+index 8a280993ed33a77ab5d3a2d842e57b51407c8dd5..6faaf9bf1f07778cd9254c1739e9856c3466a0d2 100644
 --- a/chrome/browser/resources/side_panel/bookmarks/power_bookmarks_list_header.ts
 +++ b/chrome/browser/resources/side_panel/bookmarks/power_bookmarks_list_header.ts
 @@ -96,6 +96,7 @@ export class PowerBookmarksListHeaderElement extends CrLitElement {

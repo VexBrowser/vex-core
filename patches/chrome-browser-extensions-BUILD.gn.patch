@@ -1,5 +1,5 @@
 diff --git a/chrome/browser/extensions/BUILD.gn b/chrome/browser/extensions/BUILD.gn
-index ab563732a6c0700e8632db601d1822f106a9b7d1..97ef18414d5bcbc2bae574aced4f4b6b04677f38 100644
+index 69e5ec71459db6eefecc34272624483421d926f8..831ed0167f260fe500281f88b5b2668310e72fea 100644
 --- a/chrome/browser/extensions/BUILD.gn
 +++ b/chrome/browser/extensions/BUILD.gn
 @@ -2,6 +2,7 @@
@@ -10,7 +10,7 @@ index ab563732a6c0700e8632db601d1822f106a9b7d1..97ef18414d5bcbc2bae574aced4f4b6b
  import("//build/config/chromebox_for_meetings/buildflags.gni")
  import("//build/config/features.gni")
  import("//build/config/ozone.gni")
-@@ -649,6 +650,7 @@ source_set("extensions") {
+@@ -648,6 +649,7 @@ source_set("extensions") {
      "//ui/native_window_tracker",
      "//ui/shell_dialogs",
    ]
