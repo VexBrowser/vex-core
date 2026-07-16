@@ -1,5 +1,67 @@
-<!-- Add brave-browser issue below that this PR will resolve -->
-- Resolves
+<!-- Link the Vex tracking issue that this PR resolves. -->
+- Resolves VexBrowser/vex-browser#
+
+## Change summary
+
+<!-- Describe one coherent change. Do not combine unrelated features, refactors, or upstream synchronization. -->
+
+## Change type
+
+- [ ] Vex feature or fix
+- [ ] Brave upstream synchronization
+- [ ] Chromium patch update
+- [ ] Build, packaging, or dependency change
+- [ ] Documentation or repository governance only
+
+## Upstream foundation and Vex delta
+
+<!-- Identify existing Brave/Chromium behavior, flags, prefs, components, or patches that were investigated and reused. -->
+
+**Brave/Chromium foundation reused:**
+
+**Vex-owned files added or changed:**
+
+**Inherited Brave-owned files changed:**
+
+**Chromium patch files and upstream targets changed:**
+
+**Why a lower-friction option was insufficient:**
+
+**Expected recurring conflict areas:**
+
+**Rollback or feature-disable path:**
+
+## Validation evidence
+
+```text
+Environment:
+Starting commit:
+Upstream commit/version:
+Commands run:
+Build target/output:
+Automated tests:
+Manual checks:
+Network/privacy checks:
+Screenshots or recordings:
+Not run / not applicable:
+Known limitations:
+Rollback verified:
+```
+
+## Vex checklist
+
+- [ ] I read `AGENTS.md` and the applicable documents under `docs/vex/`.
+- [ ] This PR addresses one coherent concern and contains no unrelated refactor, broad rename, formatting churn, or dependency update.
+- [ ] I investigated existing Brave and Chromium foundations before creating parallel behavior.
+- [ ] The change uses the highest viable option in the implementation preference order from `docs/vex/AGENT_RULES.md`.
+- [ ] Long-lived divergence is recorded in `docs/vex/PATCHSETS.md`.
+- [ ] An ADR is linked when the change creates an architecture exception or substantial recurring upstream cost.
+- [ ] Generated files were produced by documented commands rather than edited manually.
+- [ ] Privacy, security, accessibility, licensing, attribution, and proprietary brand impact were reviewed.
+- [ ] No secrets, profile data, private brand source files, or sensitive logs are included.
+- [ ] Validation results above describe only checks that were actually run.
+- [ ] A feature PR does not contain an upstream sync, and a sync PR does not contain Vex product work.
+- [ ] The change can be reverted or disabled without reconstructing broad deleted upstream code.
 
 <!-- CI-related labels that can be applied to this PR:
 * CI/disable-pipeline-step-cache - do not cache build steps between runs for the same commit hash
@@ -20,23 +82,14 @@
 -->
 
 <!--
-## Checklist:
+## Inherited upstream review reminders
 
-- Review design docs
-  [Browser design principles](https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/chrome_browser_design_principles.md)
-  [Style guide](https://chromium.googlesource.com/chromium/src/+/main/styleguide/c++/c++.md)
-  [Core principles](https://www.chromium.org/developers/core-principles/)
-- Ensure there are (tests)[https://www.chromium.org/developers/testing/]. Unit test as much as possible (including edge cases), but also include browser tests covering high level functionality.
-- Ensure that there are comments explaining what classes/methods are/do. The "why" is often more important than the "what" in comments. Also update any relevant docs (moving docs from wiki to brave-core if necessary).
-- Request security or other review (third-party libraries, rust code, etc...) if applicable [security/privacy review is needed](https://github.com/brave/brave-browser/wiki/Security-reviews) [other review](https://github.com/brave/reviews/issues/new/choose)
-  Also see [adding third-party libraries](https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/adding_to_third_party.md) for general guidelines on using third party code
-- Make sure there is a [ticket](https://github.com/brave/brave-browser/issues) for your issue
-- Use Github [auto-closing keywords](https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue) in the PR description above
-- Write a good [PR/commit description](https://google.github.io/eng-practices/review/developer/cl-descriptions.html)
-- Squash any review feedback or "fixup" commits before merge, so that history is a record of what happened in the repo, not your PR
-- Add appropriate labels (`QA/Yes` or `QA/No`; `release-notes/include` or `release-notes/exclude`; `OS/...`) to the associated issue
-- Checked the PR locally:
-  * `npm run test -- brave_browser_tests`, `npm run test -- brave_unit_tests` [wiki](https://github.com/brave/brave-browser/wiki/Tests)
-  * `npm run presubmit` [wiki](https://github.com/brave/brave-browser/wiki/Presubmit-checks), `npm run gn_check`, `npm run tslint`
-- Run `git rebase master` (if needed)
+- Review relevant Chromium browser design principles and style guides.
+- Add focused unit and browser tests, including edge cases.
+- Explain why classes and methods exist, not only what they do.
+- Request security, privacy, dependency, or other specialist review when applicable.
+- Write a clear PR and commit description.
+- Keep review-fix history clean according to the repository's merge policy.
+- Run the relevant inherited Brave tests and presubmit checks.
+- Feature branches may be updated from Vex `master` as needed. Upstream sync branches must follow `docs/vex/UPSTREAM.md` and preserve upstream ancestry.
 -->
