@@ -238,6 +238,10 @@
     <message name="IDS_AUTOFILL_MANAGE_LOYALTY_CARDS" desc="The text displayed at the bottom of the Autofill popup to allow the user to manage loyalty cards that can be used by Brave Autofill. Imperative. When the user clicks on it, opens the Wallet page." meaning="Manage loyalty cards in the user wallet that can be used by Chrome Autofill.">
       Manage loyalty cards...
     </message>
+
+    <message name="IDS_AUTOFILL_MANAGE_ENHANCED_AUTOFILL" desc="Hyperlink text that redirects the user to the central Brave settings page where they can manage permissions, connected apps, and clear data features.">
+      Manage enhanced autofill
+    </message>
   </if>
   <if expr="use_titlecase">
     <message name="IDS_AUTOFILL_MANAGE_ADDRESSES" desc="In Title Case: The text displayed at the bottom of the Autofill popup to allow the user to manage their Autofill preferences for addresses. Imperative. When the user clicks on it, opens the Autofill settings page." meaning="Manage addresses in the user profile that can be used by Chrome Autofill.">
@@ -250,6 +254,10 @@
 
     <message name="IDS_AUTOFILL_MANAGE_LOYALTY_CARDS" desc="In Title Case: The text displayed at the bottom of the Autofill popup to allow the user to manage loyalty cards that can be used by Brave Autofill. Imperative. When the user clicks on it, opens the Wallet page." meaning="Manage loyalty cards in the user wallet that can be used by Chrome Autofill.">
       Manage Loyalty Cards...
+    </message>
+
+    <message name="IDS_AUTOFILL_MANAGE_ENHANCED_AUTOFILL" desc="In Title Case: Hyperlink text that redirects the user to the central Brave settings page where they can manage permissions, connected apps, and clear data features.">
+      Manage Enhanced Autofill
     </message>
   </if>
 
@@ -421,6 +429,12 @@
   </message>
   <message name="IDS_AUTOFILL_ENABLE_PROFILES_TOGGLE_LABEL" desc="Label for a toggle that allows users to control whether addresses should be saved and forms should be autofilled with them. Sentence-Cased." formatter_data="android_java">
     Save and fill addresses
+  </message>
+  <message name="IDS_AUTOFILL_GMAIL_OTP_FILLING_TOGGLE_TITLE" desc="Title for the toggle that enables autofilling verification codes from Gmail.">
+    Autofill verification codes from Gmail
+  </message>
+  <message name="IDS_AUTOFILL_GMAIL_OTP_FILLING_TOGGLE_DESCRIPTION" desc="Description for the toggle that enables autofilling verification codes from Gmail.">
+    Autofill verification codes sites use to improve your security. Brave can get these codes from your Gmail. <ph name="BEGIN_LINK">&lt;a href="$1" tabindex="0" aria-description="$2" target="_blank"&gt;</ph>Learn more about this feature<ph name="LINK_END">&lt;/a&gt;</ph>
   </message>
   <message name="IDS_AUTOFILL_DISABLE_SETTINGS_EXPLANATION_TITLE" desc="Title of the card explaining why the settings page was disabled. Sentence-Cased." formatter_data="android_java">
     Brave isn’t your autofill provider
@@ -797,26 +811,8 @@
   </if>
 
   <!-- TODO(crbug.com/481979475): Make strings translatable -->
-  <message name="IDS_AUTOFILL_AT_MEMORY_SOURCE_ATTRIBUTION_TITLE" desc="Title for the source information section in the flyout menu." translateable="false">
-    About
-  </message>
-  <message name="IDS_AUTOFILL_AT_MEMORY_SOURCE_ATTRIBUTION_DESCRIPTION" desc="Template for source attribution in the flyout menu. $1 is the data source name" translateable="false">
-    Brave found this in your <ph name="SOURCE_NAME">$1<ex>Calendar</ex></ph>.
-  </message>
-  <message name="IDS_AUTOFILL_AT_MEMORY_SOURCE_GMAIL" desc="Data source name for Gmail in source attribution." translateable="false">
-    Gmail
-  </message>
-  <message name="IDS_AUTOFILL_AT_MEMORY_SOURCE_CALENDAR" desc="Data source name for Calendar in source attribution." translateable="false">
-    Calendar
-  </message>
-  <message name="IDS_AUTOFILL_AT_MEMORY_SOURCE_PHOTOS" desc="Data source name for Photos in source attribution." translateable="false">
-    Photos
-  </message>
-  <message name="IDS_AUTOFILL_AT_MEMORY_SOURCE_AMBIENT" desc="Data source name for Ambient Data in source attribution." translateable="false">
-    Ambient Data
-  </message>
-  <message name="IDS_AUTOFILL_AT_MEMORY_SOURCE_LIVETABS" desc="Data source name for Live Tabs in source attribution." translateable="false">
-    Live Tabs
+  <message name="IDS_AUTOFILL_AT_MEMORY_SOURCE_ATTRIBUTION_PERSONAL_INTELLIGENCE" desc="Attribution text for Gemini-sourced results.">
+    Suggested by Gemini
   </message>
   <message name="IDS_AUTOFILL_AT_MEMORY_NO_DATA" desc="Message shown when no data is found in @memory search." translateable="false">
     Couldn't find this in your info
@@ -849,21 +845,21 @@
     <message name="IDS_AUTOFILL_AT_MEMORY_ZERO_STATE_SUBTITLE" desc="Subtitle text shown in zero state when there are no autofill suggestions in the bottom sheet." formatter_data="android_java" translateable="false">
       Type what you need and ask Gemini to recall info from your Connected Apps
     </message>
-    <message name="IDS_AT_MEMORY_NOTICE_TITLE" desc="Title for the notice shown in the @memory bottom sheet." formatter_data="android_java" translateable="false">
-      Notice title ipsum dolor sit amet, co
+    <message name="IDS_AT_MEMORY_NOTICE_TITLE" desc="Title for the notice shown in the @memory bottom sheet." formatter_data="android_java">
+      Now you can find and fill info from Gmail and more
     </message>
-    <message name="IDS_AT_MEMORY_NOTICE_TEXT" desc="Text for the notice shown in the @memory bottom sheet." formatter_data="android_java" translateable="false">
-      Notice content sit amet, consetetur
+    <message name="IDS_AT_MEMORY_NOTICE_TEXT" desc="Text for the notice shown in the @memory bottom sheet." formatter_data="android_java">
+      Powered by Personal Intelligence with Gemini. Page titles and URLs are sent to Brave and may be reviewed by humans. <ph name="BEGIN_LINK">&lt;link&gt;</ph>Manage settings<ph name="END_LINK">&lt;/link&gt;</ph>
     </message>
-    <message name="IDS_AT_MEMORY_NOTICE_MANAGE_SETTINGS_LINK" desc="Link text to manage settings in the @memory bottom sheet notice." formatter_data="android_java" translateable="false">
-      sadipscing elitr, sed
-    </message>
-    <message name="IDS_AT_MEMORY_NOTICE_OK_BUTTON" desc="Button text to acknowledge the notice in the @memory bottom sheet." formatter_data="android_java" translateable="false">
+    <message name="IDS_AT_MEMORY_NOTICE_OK_BUTTON" desc="Button text to acknowledge the notice in the @memory bottom sheet." formatter_data="android_java">
       OK
     </message>
   </if>
-  <message name="IDS_AUTOFILL_AT_MEMORY_MANAGE_SUGGESTION_MAIN_TEXT" desc="The label for a button in the At Memory flyout that opens the Autofill for AI information management interface in Brave settings." formatter_data="android_java" translateable="false">
-    Manage information
+   <message name="IDS_AUTOFILL_AT_MEMORY_SUGGESTION_SOURCE_TEXT" desc="The label for a text in the At Memory flyout that shows the source of the autofill suggestion." formatter_data="android_java" translateable="false">
+    Suggested by Gemini
+  </message>
+  <message name="IDS_AUTOFILL_AI_SUGGESTED_BY_GEMINI" desc="Sublabel text indicating that a suggestion is sourced from Gemini.">
+    Suggested by Gemini
   </message>
 
   <!-- Autofill Address Edit Dialog -->
@@ -956,6 +952,10 @@
   </message>
   <message name="IDS_AUTOFILL_AI_ORDERS_TITLE" desc="The title of a chip referring to orders (IDS_AUTOFILL_AI_ORDER_ENTITY_NAME) on Your saved info settings page." translateable="false">
     Orders
+  </message>
+  <!-- TODO(crbug.com/503303085): Make translateable when the strings are finalized. -->
+  <message name="IDS_AUTOFILL_AI_OTHER_ORDERS" desc="Main text for a suggestion that when hovered opens a subpopup displaying other orders." translateable="false">
+    Other orders
   </message>
   <message name="IDS_AUTOFILL_AI_SHIPMENTS_TITLE" desc="The title of a chip referring to shipments (IDS_AUTOFILL_AI_SHIPMENT_ENTITY_NAME) on Your saved info settings page." translateable="false">
     Shipments
@@ -1363,11 +1363,20 @@
     Trouble filling your info. Check your connection.
   </message>
 
-  <!-- TODO(crbug.com/503303085): Translate these strings. -->
-  <message name="IDS_AUTOFILL_AI_PRE_FETCH_ERROR_MESSAGE" desc="A message that appears when prefetching Autofill AI entities fails." translateable="false">
-    Trouble finding the data
+  <message name="IDS_AUTOFILL_AI_PRE_FETCH_ERROR_MESSAGE" desc="A message that appears when prefetching Autofill AI entities fails.">
+    Trouble filling your info
   </message>
-  <message name="IDS_AUTOFILL_AI_PRE_FETCH_ERROR_MESSAGE_BUTTON_TEXT" desc="A button that is shown in the message that appears when prefetching Autofill AI entities fails." translateable="false">
+  <message name="IDS_AUTOFILL_AI_PRE_FETCH_ERROR_MESSAGE_BUTTON_TEXT" desc="A button that is shown in the message that appears when prefetching Autofill AI entities fails.">
+    Got it
+  </message>
+
+  <message name="IDS_AUTOFILL_AI_PRIVATE_INFERENCE_NOTICE_TITLE" desc="A title of the notice that infroms the user that page content will be processed privately in the cloud.">
+    Smarter autofill, kept private
+  </message>
+  <message name="IDS_AUTOFILL_AI_PRIVATE_INFERENCE_NOTICE_DESCRIPTION" desc="A description text of the notice that infroms the user that page content will be processed privately in the cloud.">
+    To improve suggestions and fill forms faster, the content and URLs of the pages you visit can be processed in a private space in the cloud.
+  </message>
+  <message name="IDS_AUTOFILL_AI_PRIVATE_INFERENCE_NOTICE_PRIMARY_BUTTON_TEXT" desc="A primary button text of the notice that infroms the user that page content will be processed privately in the cloud.">
     Got it
   </message>
 
@@ -1484,13 +1493,13 @@
     </message>
 
     <message name="IDS_AUTOFILL_AI_SUGGESTION_LONG_PRESS_DIALOG_DESCRIPTION" desc="The description text shown in the dialog after the user long presses a suggestion in the keyboard accessory." formatter_data="android_java">
-      Found by Personal Intelligence. You can manage your info in settings.
+      Suggested by Gemini. Manage enhanced autofill in settings.
     </message>
     <message name="IDS_AUTOFILL_AI_SUGGESTION_LONG_PRESS_DIALOG_POSITIVE_BUTTON" desc="The positive button shown in the dialog after the user long presses a suggestion in the keyboard accessory." formatter_data="android_java">
       Settings
     </message>
     <message name="IDS_AUTOFILL_AI_SUGGESTION_LONG_PRESS_DIALOG_NEGATIVE_BUTTON" desc="The negative button shown in the dialog after the user long presses a suggestion in the keyboard accessory." formatter_data="android_java">
-      Cancel
+      Back
     </message>
   </if>
 
@@ -1622,5 +1631,56 @@
   </message>
   <message name="IDS_SETTINGS_SUGGESTIONS_FROM_GEMINI_CONSIDER_3" desc="Bullet point 3 under Things to consider in the quality logging section.">
     Your content will not be used to improve AI. Your organization may change these settings at any time.
+  </message>
+
+  <!-- Personal Context Notice in Autofill Popup -->
+  <message name="IDS_AUTOFILL_POPUP_PERSONAL_CONTEXT_NOTICE_TITLE" translateable="false" desc="Title for the personal context notice in Autofill popup.">
+    Now autofill info from Gmail and more.
+  </message>
+  <message name="IDS_AUTOFILL_POPUP_PERSONAL_CONTEXT_NOTICE_CONTEXT" translateable="false" desc="Context text for the personal context notice in Autofill popup.">
+    Powered by Gemini with Personal Intelligence.
+  </message>
+  <message name="IDS_AUTOFILL_POPUP_PERSONAL_CONTEXT_NOTICE_LINK_TEXT" translateable="false" desc="Link text for the personal context notice in Autofill popup.">
+    Manage settings
+  </message>
+  <message name="IDS_AUTOFILL_POPUP_PERSONAL_CONTEXT_NOTICE_OK_BUTTON" translateable="false" desc="Got it button text in Autofill popup personal context notice.">
+    OK
+  </message>
+
+  <!-- Personal Context Notice in AtMemory Popup -->
+  <message name="IDS_AT_MEMORY_POPUP_PERSONAL_CONTEXT_NOTICE_TITLE" translateable="false" desc="Title for the personal context notice in AtMemory popup.">
+    Now you can find and fill info from Gmail and more.
+  </message>
+  <message name="IDS_AT_MEMORY_POPUP_PERSONAL_CONTEXT_NOTICE_CONTEXT" translateable="false" desc="Context text for the personal context notice in AtMemory popup.">
+    Powered by Personal Intelligence with Gemini. Page titles and URLs are sent to Brave and may be reviewed by humans. More about enhanced autofill in
+  </message>
+  <message name="IDS_AT_MEMORY_POPUP_PERSONAL_CONTEXT_NOTICE_LINK_TEXT" translateable="false" desc="Link text for the personal context notice in AtMemory popup.">
+    settings.
+  </message>
+  <message name="IDS_AT_MEMORY_POPUP_PERSONAL_CONTEXT_NOTICE_OK_BUTTON" translateable="false" desc="Got it button text in AtMemory popup personal context notice.">
+    OK
+  </message>
+
+  <!-- Personal Context Notice in Autofill Bottomsheet -->
+  <message name="IDS_AUTOFILL_PERSONAL_CONTEXT_NOTICE_SHEET_CONTENT_DESCRIPTION" desc="Accessibility string read when the autofill personal context notice sheet is opened." formatter_data="android_java" translateable="false">
+    Autofill from your Brave apps notice opened
+  </message>
+  <message name="IDS_AUTOFILL_PERSONAL_CONTEXT_NOTICE_SHEET_FULL_HEIGHT" desc="Accessibility string read upon opening the autofill personal context notice sheet." formatter_data="android_java" translateable="false">
+    Autofill from your Brave apps notice opened at full height
+  </message>
+  <message name="IDS_AUTOFILL_PERSONAL_CONTEXT_NOTICE_SHEET_CLOSED" desc="Accessibility string read upon closing the autofill personal context notice sheet." formatter_data="android_java" translateable="false">
+    Autofill from your Brave apps notice closed
+  </message>
+  <message name="IDS_AUTOFILL_PERSONAL_CONTEXT_NOTICE_TITLE" desc="Title of the bottom sheet notice informing users they can autofill from Brave apps." formatter_data="android_java" translateable="false">
+    Now you can autofill info from your Brave apps
+  </message>
+  <message name="IDS_AUTOFILL_PERSONAL_CONTEXT_NOTICE_DESCRIPTION" desc="Description text of the bottom sheet notice informing users about Gemini and settings." formatter_data="android_java" translateable="false">
+    Powered by Gemini with Personal Intelligence. Manage your choices anytime in settings.
+  </message>
+  <message name="IDS_AUTOFILL_PERSONAL_CONTEXT_NOTICE_OK_BUTTON" desc="Label for the OK button on the autofill notice sheet." formatter_data="android_java" translateable="false">
+    OK
+  </message>
+  <message name="IDS_AUTOFILL_PERSONAL_CONTEXT_NOTICE_SETTINGS_LINK" desc="Label for the Manage settings link on the autofill notice sheet." formatter_data="android_java" translateable="false">
+    Manage settings
   </message>
 </grit-part>
