@@ -1,0 +1,27 @@
+Vex Browser
+===========
+
+Vex is an independent browser project maintained by The Vex Team.
+
+This repository is derived from the open-source Brave Core project and includes
+or integrates software from Brave, Chromium, and other third parties. Their
+copyright, patent, attribution, and license notices remain applicable and must
+not be removed or materially altered except where a verified correction is
+required.
+
+Vex is not affiliated with, endorsed by, or sponsored by Brave Software, Inc.,
+Google LLC, or the Chromium project.
+
+Except where another license is explicitly stated, Vex-specific source code and
+documentation in this repository are intended to be made available under the
+Mozilla Public License 2.0. Inherited and third-party material remains governed
+by its respective license.
+
+The Vex name, logo, icons, wordmarks, and visual identity are proprietary and
+are not licensed under the Mozilla Public License 2.0 or any other open-source
+license merely because they may appear in or be distributed with this
+repository. See TRADEMARKS.md.
+
+This notice is informational and does not replace any license text, copyright
+notice, third-party attribution file, or distribution obligation included in
+the repository or generated browser packages.
